@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GamesRouteImport } from './routes/games'
+import { Route as GiftsRouteImport } from './routes/gifts'
+import { Route as PartiesRouteImport } from './routes/parties'
+import { Route as PersonalisedRouteImport } from './routes/personalised'
+import { Route as SeasonalRouteImport } from './routes/seasonal'
+import { Route as ShopRouteImport } from './routes/shop'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GamesRoute = GamesRouteImport.update({
+  id: '/games',
+  path: '/games',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GiftsRoute = GiftsRouteImport.update({
+  id: '/gifts',
+  path: '/gifts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartiesRoute = PartiesRouteImport.update({
+  id: '/parties',
+  path: '/parties',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PersonalisedRoute = PersonalisedRouteImport.update({
+  id: '/personalised',
+  path: '/personalised',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeasonalRoute = SeasonalRouteImport.update({
+  id: '/seasonal',
+  path: '/seasonal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopRoute = ShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/games': typeof GamesRoute
+  '/gifts': typeof GiftsRoute
+  '/parties': typeof PartiesRoute
+  '/personalised': typeof PersonalisedRoute
+  '/seasonal': typeof SeasonalRoute
+  '/shop': typeof ShopRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/games': typeof GamesRoute
+  '/gifts': typeof GiftsRoute
+  '/parties': typeof PartiesRoute
+  '/personalised': typeof PersonalisedRoute
+  '/seasonal': typeof SeasonalRoute
+  '/shop': typeof ShopRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/games': typeof GamesRoute
+  '/gifts': typeof GiftsRoute
+  '/parties': typeof PartiesRoute
+  '/personalised': typeof PersonalisedRoute
+  '/seasonal': typeof SeasonalRoute
+  '/shop': typeof ShopRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/games'
+    | '/gifts'
+    | '/parties'
+    | '/personalised'
+    | '/seasonal'
+    | '/shop'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/games'
+    | '/gifts'
+    | '/parties'
+    | '/personalised'
+    | '/seasonal'
+    | '/shop'
+  id:
+    | '__root__'
+    | '/'
+    | '/games'
+    | '/gifts'
+    | '/parties'
+    | '/personalised'
+    | '/seasonal'
+    | '/shop'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GamesRoute: typeof GamesRoute
+  GiftsRoute: typeof GiftsRoute
+  PartiesRoute: typeof PartiesRoute
+  PersonalisedRoute: typeof PersonalisedRoute
+  SeasonalRoute: typeof SeasonalRoute
+  ShopRoute: typeof ShopRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/games': {
+      id: '/games'
+      path: '/games'
+      fullPath: '/games'
+      preLoaderRoute: typeof GamesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gifts': {
+      id: '/gifts'
+      path: '/gifts'
+      fullPath: '/gifts'
+      preLoaderRoute: typeof GiftsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parties': {
+      id: '/parties'
+      path: '/parties'
+      fullPath: '/parties'
+      preLoaderRoute: typeof PartiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/personalised': {
+      id: '/personalised'
+      path: '/personalised'
+      fullPath: '/personalised'
+      preLoaderRoute: typeof PersonalisedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seasonal': {
+      id: '/seasonal'
+      path: '/seasonal'
+      fullPath: '/seasonal'
+      preLoaderRoute: typeof SeasonalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GamesRoute: GamesRoute,
+  GiftsRoute: GiftsRoute,
+  PartiesRoute: PartiesRoute,
+  PersonalisedRoute: PersonalisedRoute,
+  SeasonalRoute: SeasonalRoute,
+  ShopRoute: ShopRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
