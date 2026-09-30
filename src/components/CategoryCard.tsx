@@ -1,11 +1,19 @@
 import { Link } from "@tanstack/react-router";
-import type { Category } from "@/data/products";
+import type { Category, CategorySlug } from "@/data/products";
+
+export const categoryRoutes = {
+  personalised: "/personalised",
+  parties: "/parties",
+  games: "/games",
+  gifts: "/gifts",
+  seasonal: "/seasonal",
+} as const satisfies Record<CategorySlug, string>;
 
 export function CategoryCard({ category }: { category: Category }) {
   return (
     <Link
-      to={`/${category.slug}`}
-      className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl p-6 transition-transform hover:-translate-y-1 ${category.surface}`}
+      to={categoryRoutes[category.slug]}
+      className={`group flex flex-col justify-between overflow-hidden rounded-3xl p-6 transition-transform hover:-translate-y-1 ${category.surface}`}
     >
       <div>
         <h3 className="font-display text-xl text-foreground">{category.name}</h3>
