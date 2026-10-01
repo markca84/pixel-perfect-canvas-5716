@@ -74,7 +74,7 @@ function ProductPage() {
                   {product.colours.map((colour) => (
                     <span
                       key={colour.name}
-                      className={`flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2 text-xs font-bold ${""}`}
+                      className="flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2 text-xs font-bold"
                     >
                       <span
                         className={`size-4 rounded-full border border-border ${colour.token}`}
