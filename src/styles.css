@@ -53,6 +53,22 @@
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
 
+  /* Decal (vinyl) colours — stronger than pastels so names read clearly */
+  --color-vinyl-pink: var(--vinyl-pink);
+  --color-vinyl-blue: var(--vinyl-blue);
+  --color-vinyl-lilac: var(--vinyl-lilac);
+  --color-vinyl-mint: var(--vinyl-mint);
+  --color-vinyl-yellow: var(--vinyl-yellow);
+  --color-vinyl-black: var(--vinyl-black);
+  --color-vinyl-white: var(--vinyl-white);
+
+  /* Decal font choices */
+  --font-chunky: "Baloo 2", sans-serif;
+  --font-handwritten: "Pacifico", cursive;
+  --font-rounded: "Fredoka", sans-serif;
+  --font-classic: "DM Serif Display", serif;
+  --font-playful: "Chewy", cursive;
+
   --shadow-card: 0 18px 40px -28px oklch(0.35 0.06 40 / 0.45);
   --shadow-lift: 0 26px 60px -32px oklch(0.35 0.06 40 / 0.55);
 }
@@ -95,6 +111,14 @@
   --butter: oklch(0.94 0.075 95);
   --mint: oklch(0.91 0.06 155);
   --lilac: oklch(0.9 0.055 300);
+
+  --vinyl-pink: oklch(0.7 0.15 5);
+  --vinyl-blue: oklch(0.64 0.12 240);
+  --vinyl-lilac: oklch(0.64 0.12 300);
+  --vinyl-mint: oklch(0.72 0.12 165);
+  --vinyl-yellow: oklch(0.82 0.15 85);
+  --vinyl-black: oklch(0.27 0.025 45);
+  --vinyl-white: oklch(0.995 0.003 84);
 }
 
 @layer base {
