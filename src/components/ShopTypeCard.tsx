@@ -3,10 +3,17 @@ import { DecalName } from "./DecalName";
 import { formatPrice } from "@/data/products";
 import type { ShopType } from "@/data/decals";
 
+const routes = {
+  "stick-on-names": "/stick-on-names",
+  "iron-on-names": "/iron-on-names",
+  "name-packs": "/name-packs",
+  "school-packs": "/school-packs",
+} as const satisfies Record<ShopType["slug"], string>;
+
 export function ShopTypeCard({ type }: { type: ShopType }) {
   return (
     <Link
-      to={`/${type.slug}`}
+      to={routes[type.slug]}
       className={`group flex flex-col overflow-hidden rounded-3xl p-6 transition-transform hover:-translate-y-1 ${type.surface}`}
     >
       <div className="flex min-h-36 items-center justify-center rounded-2xl bg-card/80 px-4 py-8">

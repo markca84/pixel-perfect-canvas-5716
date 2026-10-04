@@ -1,29 +1,29 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/Hero";
-import { CategoryCard } from "@/components/CategoryCard";
-import { ProductCard } from "@/components/ProductCard";
+import { ShopTypeCard } from "@/components/ShopTypeCard";
+import { Personaliser } from "@/components/Personaliser";
+import { ThemedPacks } from "@/components/ThemedPacks";
 import { HowItWorks } from "@/components/HowItWorks";
-import { PromoBanner } from "@/components/PromoBanner";
-import { categories, featuredProducts } from "@/data/products";
+import { UseItOn } from "@/components/UseItOn";
+import { StarterPack } from "@/components/StarterPack";
+import { WhyPaperBeans } from "@/components/WhyPaperBeans";
+import { GamesTeaser } from "@/components/GamesTeaser";
 import { DoodleStar } from "@/components/Doodles";
+import { shopTypes } from "@/data/decals";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Paper Beans — Little things. Made just for you." },
+      { title: "Paper Beans — Personalised name decals & iron-on transfers" },
       {
         name: "description",
         content:
-          "UK-made personalised water bottles, lunch bags, pencil cases, name stickers, party products and gifts. Free UK delivery over £35.",
+          "Create personalised names, decals and iron-on transfers for bottles, bags, lunchboxes, clothes and more. Made to order in the UK.",
       },
-      {
-        property: "og:title",
-        content: "Paper Beans — Little things. Made just for you.",
-      },
+      { property: "og:title", content: "Paper Beans — Make their stuff, theirs." },
       {
         property: "og:description",
-        content:
-          "Personalised goodies for school, birthdays, gifting and everything in between.",
+        content: "Personalised stick-on names and iron-on transfers, made to order and ready to apply.",
       },
     ],
   }),
@@ -38,46 +38,40 @@ function Index() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:py-20">
         <div className="flex items-end justify-between gap-6">
           <div>
-            <p className="label-eyebrow">Categories</p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl">
-              Made for every little moment
-            </h2>
+            <p className="label-eyebrow">Shop by type</p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl">A little name goes a long way.</h2>
+            <p className="mt-3 max-w-xl text-muted-foreground">
+              For school stuff, sports kits, favourite bottles and everything that somehow goes missing.
+            </p>
           </div>
           <DoodleStar className="doodle hidden size-10 sm:block" />
         </div>
-
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
-            <CategoryCard key={category.slug} category={category} />
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {shopTypes.map((t) => (
+            <ShopTypeCard key={t.slug} type={t} />
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-8">
-        <div className="flex items-end justify-between gap-6">
-          <div>
-            <p className="label-eyebrow">Bestsellers</p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl">
-              School favourites
-            </h2>
+      <section className="bg-blush/40 py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4">
+          <p className="label-eyebrow">Make your name</p>
+          <h2 className="mt-3 font-display text-4xl sm:text-5xl">Make it theirs.</h2>
+          <p className="mt-3 max-w-xl text-muted-foreground">
+            Pick a name. Choose a style. Add a little something extra.
+          </p>
+          <div className="mt-10">
+            <Personaliser />
           </div>
-          <Link
-            to="/shop"
-            className="hidden text-xs font-extrabold tracking-widest text-muted-foreground hover:text-foreground sm:block"
-          >
-            SHOP ALL
-          </Link>
-        </div>
-
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {featuredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
         </div>
       </section>
 
+      <ThemedPacks />
       <HowItWorks />
-      <PromoBanner />
+      <UseItOn />
+      <StarterPack />
+      <WhyPaperBeans />
+      <GamesTeaser />
     </>
   );
 }

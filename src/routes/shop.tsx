@@ -1,23 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ProductCard } from "@/components/ProductCard";
-import { PromoBanner } from "@/components/PromoBanner";
-import { CategoryCard } from "@/components/CategoryCard";
-import { categories, products } from "@/data/products";
+import { ShopTypeCard } from "@/components/ShopTypeCard";
+import { ThemedPacks } from "@/components/ThemedPacks";
+import { GamesTeaser } from "@/components/GamesTeaser";
+import { shopTypes } from "@/data/decals";
 
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
       { title: "Shop all — Paper Beans" },
-      {
-        name: "description",
-        content:
-          "Every Paper Beans product in one place: personalised school kit, party bits, games, gifts and seasonal keepsakes.",
-      },
+      { name: "description", content: "Stick-on names, iron-on names, themed name packs and school starter packs — personalised by you, made to order in the UK." },
       { property: "og:title", content: "Shop all — Paper Beans" },
-      {
-        property: "og:description",
-        content: "Every Paper Beans product in one place.",
-      },
+      { property: "og:description", content: "Personalised names for all the stuff they already own." },
     ],
   }),
   component: ShopPage,
@@ -28,32 +21,20 @@ function ShopPage() {
     <>
       <section className="mx-auto max-w-7xl px-4 pt-12 sm:pt-16">
         <p className="label-eyebrow">Shop</p>
-        <h1 className="mt-3 font-display text-4xl sm:text-5xl">
-          Everything we make
-        </h1>
+        <h1 className="mt-3 font-display text-4xl sm:text-5xl">Personalised names, ready to apply</h1>
         <p className="mt-4 max-w-xl text-muted-foreground">
-          Made in-house in the UK, personalised by you. Free UK delivery over
-          £35.
+          You bring the stuff. We bring the personal touch — made to order in the UK.
         </p>
       </section>
-
       <section className="mx-auto max-w-7xl px-4 py-10">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {categories.map((category) => (
-            <CategoryCard key={category.slug} category={category} />
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {shopTypes.map((t) => (
+            <ShopTypeCard key={t.slug} type={t} />
           ))}
         </div>
       </section>
-
-      <section className="mx-auto max-w-7xl px-4 pb-12">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
-
-      <PromoBanner />
+      <ThemedPacks />
+      <GamesTeaser />
     </>
   );
 }
