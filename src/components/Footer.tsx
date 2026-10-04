@@ -10,7 +10,7 @@ export function Footer() {
           <div className="max-w-sm">
             <p className="font-display text-2xl">Good things in your inbox.</p>
             <p className="mt-2 text-sm text-muted-foreground">
-              New products, ideas and occasional treats.
+              New designs, ideas and occasional treats.
             </p>
             <form
               className="mt-5 flex flex-col gap-3 sm:flex-row"
@@ -39,66 +39,22 @@ export function Footer() {
             <div>
               <h3 className="label-eyebrow">Shop</h3>
               <ul className="mt-4 space-y-2.5 text-sm">
-                <li>
-                  <Link to="/shop" className="hover:text-primary">
-                    All products
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/personalised" className="hover:text-primary">
-                    Personalised
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/parties" className="hover:text-primary">
-                    Parties
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/games" className="hover:text-primary">
-                    Games
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/gifts" className="hover:text-primary">
-                    Gifts
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/seasonal" className="hover:text-primary">
-                    Seasonal
-                  </Link>
-                </li>
+                <li><Link to="/stick-on-names" className="hover:text-primary">Stick-On Names</Link></li>
+                <li><Link to="/iron-on-names" className="hover:text-primary">Iron-On Names</Link></li>
+                <li><Link to="/name-packs" className="hover:text-primary">Name Packs</Link></li>
+                <li><Link to="/school-packs" className="hover:text-primary">School Packs</Link></li>
+                <li><Link to="/games" className="hover:text-primary">Games</Link></li>
               </ul>
             </div>
 
             <div>
               <h3 className="label-eyebrow">Help</h3>
               <ul className="mt-4 space-y-2.5 text-sm">
-                <li>
-                  <Link to="/about" className="hover:text-primary">
-                    About Paper Beans
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" hash="delivery" className="hover:text-primary">
-                    Delivery &amp; Returns
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/about"
-                    hash="personalisation"
-                    className="hover:text-primary"
-                  >
-                    Personalisation Guide
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" hash="contact" className="hover:text-primary">
-                    Contact
-                  </Link>
-                </li>
+                <li><Link to="/how-it-works" className="hover:text-primary">How It Works</Link></li>
+                <li><Link to="/application-guide" className="hover:text-primary">Application Guide</Link></li>
+                <li><Link to="/about" hash="delivery" className="hover:text-primary">Delivery &amp; Returns</Link></li>
+                <li><Link to="/application-guide" hash="faqs" className="hover:text-primary">FAQs</Link></li>
+                <li><Link to="/about" hash="contact" className="hover:text-primary">Contact</Link></li>
               </ul>
             </div>
 
