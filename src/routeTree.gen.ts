@@ -11,13 +11,20 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ApplicationGuideRouteImport } from './routes/application-guide'
 import { Route as BasketRouteImport } from './routes/basket'
 import { Route as GamesRouteImport } from './routes/games'
 import { Route as GiftsRouteImport } from './routes/gifts'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as IronOnNamesRouteImport } from './routes/iron-on-names'
+import { Route as MakeYourNameRouteImport } from './routes/make-your-name'
+import { Route as NamePacksRouteImport } from './routes/name-packs'
 import { Route as PartiesRouteImport } from './routes/parties'
 import { Route as PersonalisedRouteImport } from './routes/personalised'
+import { Route as SchoolPacksRouteImport } from './routes/school-packs'
 import { Route as SeasonalRouteImport } from './routes/seasonal'
 import { Route as ShopRouteImport } from './routes/shop'
+import { Route as StickOnNamesRouteImport } from './routes/stick-on-names'
 import { Route as ProductSlugRouteImport } from './routes/product.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -28,6 +35,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApplicationGuideRoute = ApplicationGuideRouteImport.update({
+  id: '/application-guide',
+  path: '/application-guide',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BasketRoute = BasketRouteImport.update({
@@ -45,6 +57,26 @@ const GiftsRoute = GiftsRouteImport.update({
   path: '/gifts',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IronOnNamesRoute = IronOnNamesRouteImport.update({
+  id: '/iron-on-names',
+  path: '/iron-on-names',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MakeYourNameRoute = MakeYourNameRouteImport.update({
+  id: '/make-your-name',
+  path: '/make-your-name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NamePacksRoute = NamePacksRouteImport.update({
+  id: '/name-packs',
+  path: '/name-packs',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PartiesRoute = PartiesRouteImport.update({
   id: '/parties',
   path: '/parties',
@@ -53,6 +85,11 @@ const PartiesRoute = PartiesRouteImport.update({
 const PersonalisedRoute = PersonalisedRouteImport.update({
   id: '/personalised',
   path: '/personalised',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolPacksRoute = SchoolPacksRouteImport.update({
+  id: '/school-packs',
+  path: '/school-packs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SeasonalRoute = SeasonalRouteImport.update({
@@ -65,6 +102,11 @@ const ShopRoute = ShopRouteImport.update({
   path: '/shop',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StickOnNamesRoute = StickOnNamesRouteImport.update({
+  id: '/stick-on-names',
+  path: '/stick-on-names',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductSlugRoute = ProductSlugRouteImport.update({
   id: '/product/$slug',
   path: '/product/$slug',
@@ -74,38 +116,59 @@ const ProductSlugRoute = ProductSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/application-guide': typeof ApplicationGuideRoute
   '/basket': typeof BasketRoute
   '/games': typeof GamesRoute
   '/gifts': typeof GiftsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/iron-on-names': typeof IronOnNamesRoute
+  '/make-your-name': typeof MakeYourNameRoute
+  '/name-packs': typeof NamePacksRoute
   '/parties': typeof PartiesRoute
   '/personalised': typeof PersonalisedRoute
+  '/school-packs': typeof SchoolPacksRoute
   '/seasonal': typeof SeasonalRoute
   '/shop': typeof ShopRoute
+  '/stick-on-names': typeof StickOnNamesRoute
   '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/application-guide': typeof ApplicationGuideRoute
   '/basket': typeof BasketRoute
   '/games': typeof GamesRoute
   '/gifts': typeof GiftsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/iron-on-names': typeof IronOnNamesRoute
+  '/make-your-name': typeof MakeYourNameRoute
+  '/name-packs': typeof NamePacksRoute
   '/parties': typeof PartiesRoute
   '/personalised': typeof PersonalisedRoute
+  '/school-packs': typeof SchoolPacksRoute
   '/seasonal': typeof SeasonalRoute
   '/shop': typeof ShopRoute
+  '/stick-on-names': typeof StickOnNamesRoute
   '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/application-guide': typeof ApplicationGuideRoute
   '/basket': typeof BasketRoute
   '/games': typeof GamesRoute
   '/gifts': typeof GiftsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/iron-on-names': typeof IronOnNamesRoute
+  '/make-your-name': typeof MakeYourNameRoute
+  '/name-packs': typeof NamePacksRoute
   '/parties': typeof PartiesRoute
   '/personalised': typeof PersonalisedRoute
+  '/school-packs': typeof SchoolPacksRoute
   '/seasonal': typeof SeasonalRoute
   '/shop': typeof ShopRoute
+  '/stick-on-names': typeof StickOnNamesRoute
   '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRouteTypes {
@@ -113,50 +176,78 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/application-guide'
     | '/basket'
     | '/games'
     | '/gifts'
+    | '/how-it-works'
+    | '/iron-on-names'
+    | '/make-your-name'
+    | '/name-packs'
     | '/parties'
     | '/personalised'
+    | '/school-packs'
     | '/seasonal'
     | '/shop'
+    | '/stick-on-names'
     | '/product/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/application-guide'
     | '/basket'
     | '/games'
     | '/gifts'
+    | '/how-it-works'
+    | '/iron-on-names'
+    | '/make-your-name'
+    | '/name-packs'
     | '/parties'
     | '/personalised'
+    | '/school-packs'
     | '/seasonal'
     | '/shop'
+    | '/stick-on-names'
     | '/product/$slug'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/application-guide'
     | '/basket'
     | '/games'
     | '/gifts'
+    | '/how-it-works'
+    | '/iron-on-names'
+    | '/make-your-name'
+    | '/name-packs'
     | '/parties'
     | '/personalised'
+    | '/school-packs'
     | '/seasonal'
     | '/shop'
+    | '/stick-on-names'
     | '/product/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ApplicationGuideRoute: typeof ApplicationGuideRoute
   BasketRoute: typeof BasketRoute
   GamesRoute: typeof GamesRoute
   GiftsRoute: typeof GiftsRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  IronOnNamesRoute: typeof IronOnNamesRoute
+  MakeYourNameRoute: typeof MakeYourNameRoute
+  NamePacksRoute: typeof NamePacksRoute
   PartiesRoute: typeof PartiesRoute
   PersonalisedRoute: typeof PersonalisedRoute
+  SchoolPacksRoute: typeof SchoolPacksRoute
   SeasonalRoute: typeof SeasonalRoute
   ShopRoute: typeof ShopRoute
+  StickOnNamesRoute: typeof StickOnNamesRoute
   ProductSlugRoute: typeof ProductSlugRoute
 }
 
@@ -174,6 +265,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/application-guide': {
+      id: '/application-guide'
+      path: '/application-guide'
+      fullPath: '/application-guide'
+      preLoaderRoute: typeof ApplicationGuideRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/basket': {
@@ -197,6 +295,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GiftsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/iron-on-names': {
+      id: '/iron-on-names'
+      path: '/iron-on-names'
+      fullPath: '/iron-on-names'
+      preLoaderRoute: typeof IronOnNamesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/make-your-name': {
+      id: '/make-your-name'
+      path: '/make-your-name'
+      fullPath: '/make-your-name'
+      preLoaderRoute: typeof MakeYourNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/name-packs': {
+      id: '/name-packs'
+      path: '/name-packs'
+      fullPath: '/name-packs'
+      preLoaderRoute: typeof NamePacksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/parties': {
       id: '/parties'
       path: '/parties'
@@ -209,6 +335,13 @@ declare module '@tanstack/react-router' {
       path: '/personalised'
       fullPath: '/personalised'
       preLoaderRoute: typeof PersonalisedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/school-packs': {
+      id: '/school-packs'
+      path: '/school-packs'
+      fullPath: '/school-packs'
+      preLoaderRoute: typeof SchoolPacksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/seasonal': {
@@ -225,6 +358,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/stick-on-names': {
+      id: '/stick-on-names'
+      path: '/stick-on-names'
+      fullPath: '/stick-on-names'
+      preLoaderRoute: typeof StickOnNamesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/product/$slug': {
       id: '/product/$slug'
       path: '/product/$slug'
@@ -238,13 +378,20 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ApplicationGuideRoute: ApplicationGuideRoute,
   BasketRoute: BasketRoute,
   GamesRoute: GamesRoute,
   GiftsRoute: GiftsRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  IronOnNamesRoute: IronOnNamesRoute,
+  MakeYourNameRoute: MakeYourNameRoute,
+  NamePacksRoute: NamePacksRoute,
   PartiesRoute: PartiesRoute,
   PersonalisedRoute: PersonalisedRoute,
+  SchoolPacksRoute: SchoolPacksRoute,
   SeasonalRoute: SeasonalRoute,
   ShopRoute: ShopRoute,
+  StickOnNamesRoute: StickOnNamesRoute,
   ProductSlugRoute: ProductSlugRoute,
 }
 export const routeTree = rootRouteImport

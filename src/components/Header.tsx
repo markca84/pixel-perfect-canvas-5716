@@ -1,14 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, Search, ShoppingBag, User, X } from "lucide-react";
+import { Menu, Search, ShoppingBag, X } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
-  { label: "Personalised", to: "/personalised" },
-  { label: "Parties", to: "/parties" },
+  { label: "Shop", to: "/shop" },
+  { label: "Stick-On Names", to: "/stick-on-names" },
+  { label: "Iron-On Names", to: "/iron-on-names" },
+  { label: "Name Packs", to: "/name-packs" },
   { label: "Games", to: "/games" },
-  { label: "Gifts", to: "/gifts" },
-  { label: "Seasonal", to: "/seasonal" },
-  { label: "About", to: "/about" },
+  { label: "How It Works", to: "/how-it-works" },
 ] as const;
 
 export function Header() {
@@ -18,7 +18,7 @@ export function Header() {
     <header className="sticky top-0 z-50">
       <div className="bg-primary text-primary-foreground">
         <p className="mx-auto max-w-7xl px-4 py-2 text-center text-[0.72rem] font-bold tracking-wide sm:text-xs">
-          Free UK delivery over £35 • Handmade with care • Personalised by you
+          Personalised by you • Made by us • Posted to your door
         </p>
       </div>
 
@@ -60,13 +60,6 @@ export function Header() {
               aria-label="Search"
             >
               <Search className="size-5" />
-            </button>
-            <button
-              type="button"
-              className="rounded-full p-2.5 transition-colors hover:bg-secondary"
-              aria-label="Account"
-            >
-              <User className="size-5" />
             </button>
             <Link
               to="/basket"
