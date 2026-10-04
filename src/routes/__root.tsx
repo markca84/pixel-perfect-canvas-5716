@@ -83,11 +83,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Paper Beans — Personalised gifts made in the UK" },
+      { title: "Paper Beans — Personalised name decals & iron-on transfers" },
       {
         name: "description",
         content:
-          "Personalised water bottles, lunch bags, pencil cases, name stickers, party bits and gifts, made in-house in the UK.",
+          "Personalised stick-on name decals, iron-on transfers and themed name packs, made to order in the UK.",
       },
       { name: "author", content: "Paper Beans" },
       { property: "og:type", content: "website" },

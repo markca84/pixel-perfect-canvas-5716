@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram } from "lucide-react";
 import { DoodleHeart, DoodleStar } from "./Doodles";
 
 export function Footer() {
@@ -59,22 +58,10 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="label-eyebrow">Follow</h3>
-              <ul className="mt-4 space-y-2.5 text-sm">
-                <li>
-                  <a
-                    href="https://instagram.com"
-                    className="inline-flex items-center gap-2 hover:text-primary"
-                  >
-                    <Instagram className="size-4" /> Instagram
-                  </a>
-                </li>
-                <li>
-                  <a href="https://pinterest.com" className="hover:text-primary">
-                    Pinterest
-                  </a>
-                </li>
-              </ul>
+              <h3 className="label-eyebrow">Paper Beans</h3>
+              <p className="mt-4 max-w-xs text-sm text-muted-foreground">
+                Personalised names and little details for the things they already love.
+              </p>
               <div className="mt-6 flex items-center gap-2">
                 <DoodleStar className="doodle size-5" />
                 <DoodleHeart className="doodle size-5 text-accent" />

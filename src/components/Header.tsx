@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, Search, ShoppingBag, X } from "lucide-react";
+import { Menu, ShoppingBag, X } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
@@ -54,13 +54,6 @@ export function Header() {
           </nav>
 
           <div className="ml-auto flex items-center gap-1">
-            <button
-              type="button"
-              className="rounded-full p-2.5 transition-colors hover:bg-secondary"
-              aria-label="Search"
-            >
-              <Search className="size-5" />
-            </button>
             <Link
               to="/basket"
               className="rounded-full p-2.5 transition-colors hover:bg-secondary"

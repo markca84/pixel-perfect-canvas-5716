@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ShoppingBag } from "lucide-react";
-import { featuredProducts } from "@/data/products";
-import { ProductCard } from "@/components/ProductCard";
+import { ShopTypeCard } from "@/components/ShopTypeCard";
+import { shopTypes } from "@/data/decals";
 
 export const Route = createFileRoute("/basket")({
   head: () => ({
@@ -9,7 +9,7 @@ export const Route = createFileRoute("/basket")({
       { title: "Your basket — Paper Beans" },
       {
         name: "description",
-        content: "Your Paper Beans basket. Free UK delivery on orders over £35.",
+        content: "Your Paper Beans basket for personalised name decals, iron-on transfers and name packs.",
       },
       { property: "og:title", content: "Your basket — Paper Beans" },
       {
@@ -33,8 +33,7 @@ function BasketPage() {
           Your basket is empty
         </h1>
         <p className="mt-4 text-muted-foreground">
-          Once the personaliser is live you&apos;ll be able to add names, colours
-          and designs here before checking out.
+          Nothing here yet. Start with a stick-on name, iron-on transfer or one of our themed packs.
         </p>
         <Link
           to="/shop"
@@ -45,10 +44,10 @@ function BasketPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-20">
-        <h2 className="font-display text-2xl sm:text-3xl">Popular right now</h2>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {featuredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+        <h2 className="font-display text-2xl sm:text-3xl">Start personalising</h2>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {shopTypes.map((type) => (
+            <ShopTypeCard key={type.slug} type={type} />
           ))}
         </div>
       </section>
